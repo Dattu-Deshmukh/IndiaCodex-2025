@@ -1,51 +1,176 @@
-# IndiaCodex 2025
+# Cardano NFT Minting Website
 
+A modern, production-ready NFT minting platform built for the Cardano blockchain. This application allows users to connect their Cardano wallets and mint unique digital collectibles on the Cardano Preprod Testnet.
 
-Welcome to [**IndiaCodex'25 Hackathon**](https://www.indiacodex.com) powered by [**Nucast Labs**](https://nucast.io/)
-Please find attached the rules and steps to submit your project for the hackathon :
+## 🚀 Features
 
-## Step - 1: Fork the repository
+- **Wallet Integration**: Connect with popular Cardano wallets (Nami, Eternl, Lace, Flint)
+- **NFT Minting**: Create unique NFTs with randomly generated attributes
+- **Gallery View**: Browse and manage your NFT collection
+- **Responsive Design**: Modern Web3 UI that works on all devices
+- **Testnet Safe**: Runs on Cardano Preprod Testnet for safe testing
+- **Real-time Updates**: Live wallet balance and transaction status
 
-Fork the given repository to your GitHub profile.
+## 🛠 Tech Stack
 
+- **Frontend**: React 18 + Vite
+- **Styling**: TailwindCSS with custom Web3 theme
+- **Blockchain**: Cardano (Preprod Testnet)
+- **Wallet Integration**: MeshJS SDK
+- **API**: Blockfrost for blockchain interaction
 
-## Step - 2: Create your folder
+## 📦 Installation
 
-After forking the repository, clone the repository to your pc/desktop, and then create a folder with your **TeamName** as the folder name.
+1. **Clone the repository**
+   \`\`\`bash
+   git clone <your-repo-url>
+   cd cardano-nft-minting
+   \`\`\`
 
-Unclear about cloning? No problem, we've got your back. Click [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to learn about it.
+2. **Install dependencies**
+   \`\`\`bash
+   npm install
+   \`\`\`
 
-## Step - 3: Project Code Base
+3. **Environment Setup**
+   \`\`\`bash
+   cp .env.example .env
+   \`\`\`
+   
+   Add your Blockfrost API key to `.env`:
+   \`\`\`
+   VITE_BLOCKFROST_API_KEY=your_preprod_api_key_here
+   \`\`\`
 
-Push Your code base in this folder.
-This should include all your files for frontend as well as the backend
+4. **Start development server**
+   \`\`\`bash
+   npm run dev
+   \`\`\`
 
-## Step - 4: Team Info and Project Info
+## 🔑 Getting Started
 
-In your **TeamName** folder, make sure to include the below details in the README.md:
+### Prerequisites
 
-1. Your Project
-2. Your Project's Description
-3. What problem you are trying to solve
-4. Tech Stack used while building the project
-5. Project Demo Photos, Videos
-6. If your project is deployed, then include the Live Project Link
-7. Your PPT link (Make sure to upload the PPT in this folder along with the project)
-8. Your Team Members' Info.
+1. **Cardano Wallet**: Install one of the supported wallets:
+   - [Nami](https://namiwallet.io/)
+   - [Eternl](https://eternl.io/)
+   - [Lace](https://www.lace.io/)
+   - [Flint](https://flint-wallet.com/)
 
-## Step - 5: Submitting the code: Making a Pull request
+2. **Testnet ADA**: Get free testnet ADA from the [Cardano Testnet Faucet](https://docs.cardano.org/cardano-testnet/tools/faucet/)
 
-After you have pushed your files and code base,
-[create an issue](https://github.com/IndiaCodex/IndiaCodex-2025/issues) in the main repository as:
+3. **Blockfrost API Key**: 
+   - Sign up at [Blockfrost.io](https://blockfrost.io/)
+   - Create a new project for "Cardano Preprod"
+   - Copy your API key to the `.env` file
 
-- Issue: Team Name: Submission
-- Issue description should include a small glimpse of your project, what is it doing, and how are you trying to achieve it.
+### Usage
 
-After the issue is assigned, make a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) from your forked repo to this repo's main branch while mentioning issue no. assigned to it.
+1. **Connect Wallet**: Click on your preferred wallet to connect
+2. **Mint NFT**: Click "Mint NFT" to create a unique digital collectible
+3. **View Collection**: Browse your NFTs in the Gallery section
+4. **Transaction Details**: View transaction hashes on Cardano Explorer
 
-## Guides and Rules for submission:
+## 🏗 Project Structure
 
-1. Make sure you fork the repository first, and create a folder with your team name.
-2. Make all your code added to your forked repo, and then push the code to your main branch after your project is complete.
-3. Make sure to push files to your folder only.
-4. Changing or doing any edits to other folders is strictly prohibited.
+\`\`\`
+src/
+├── components/
+│   ├── WalletConnect.jsx    # Wallet connection interface
+│   ├── MintButton.jsx       # NFT minting functionality
+│   ├── Gallery.jsx          # NFT collection display
+│   ├── NFTCard.jsx          # Individual NFT card component
+│   ├── Stats.jsx            # Collection statistics
+│   └── TransactionStatus.jsx # Transaction status display
+├── contexts/
+│   └── WalletProvider.jsx   # MeshJS wallet context
+├── hooks/
+│   └── useCardano.js        # Custom Cardano utilities
+├── utils/
+│   └── nftUtils.js          # NFT helper functions
+├── App.jsx                  # Main application component
+├── main.jsx                 # Application entry point
+└── index.css                # TailwindCSS styles
+\`\`\`
+
+## 🎨 Design Features
+
+- **Web3 Aesthetic**: Gradient backgrounds, glass morphism effects
+- **Responsive Layout**: Mobile-first design with Flexbox/Grid
+- **Interactive Elements**: Hover effects, animations, loading states
+- **Accessibility**: ARIA labels, keyboard navigation, screen reader support
+- **Color System**: Cardano blue theme with carefully selected accent colors
+
+## 🔧 Configuration
+
+### Network Settings
+- **Default**: Cardano Preprod Testnet
+- **Network ID**: 0 (testnet)
+- **Explorer**: https://preprod.cardanoscan.io
+
+### Customization
+- Modify NFT metadata in `src/components/MintButton.jsx`
+- Update styling in `src/index.css` and `tailwind.config.js`
+- Add new wallet types in `src/components/WalletConnect.jsx`
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Push code to GitHub
+2. Connect repository to Vercel
+3. Add environment variable: `VITE_BLOCKFROST_API_KEY`
+4. Deploy
+
+### Netlify
+1. Build the project: `npm run build`
+2. Upload `dist` folder to Netlify
+3. Set environment variables in Netlify dashboard
+
+## 🔒 Security
+
+- **Client-side Only**: No private keys stored on server
+- **Wallet Signatures**: All transactions signed by user's wallet
+- **Testnet Environment**: Safe testing without real funds
+- **Environment Variables**: Sensitive data stored securely
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Wallet Connection Failed**
+   - Ensure wallet extension is installed and unlocked
+   - Check if wallet is set to Preprod Testnet
+   - Try refreshing the page
+
+2. **Minting Failed**
+   - Verify sufficient testnet ADA balance
+   - Check Blockfrost API key is valid
+   - Ensure wallet is connected to Preprod network
+
+3. **NFTs Not Showing**
+   - Wait for transaction confirmation (1-2 minutes)
+   - Click "Refresh" in the gallery
+   - Check transaction on Cardano Explorer
+
+## 📚 Resources
+
+- [Cardano Documentation](https://docs.cardano.org/)
+- [MeshJS Documentation](https://docs.meshjs.dev/)
+- [Blockfrost API](https://docs.blockfrost.io/)
+- [Cardano Testnet Faucet](https://docs.cardano.org/cardano-testnet/tools/faucet/)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+**Happy Minting! 🎨✨**
